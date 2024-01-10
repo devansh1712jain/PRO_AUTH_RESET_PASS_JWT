@@ -7,7 +7,7 @@ import  dotenv  from 'dotenv';
 
 dotenv.config();
 const app = express();
-mongoose.connect(process.env.MONGO_URL).then(()=>{
+mongoose.connect('mongodb+srv://admin:admin@cluster0.ab36zfq.mongodb.net/devansh').then(()=>{
 
     app.listen(process.env.PORT || 8080,()=>{
         console.log("server is connected on port 8080");
