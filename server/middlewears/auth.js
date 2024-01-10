@@ -1,9 +1,9 @@
 import jwt from "jsonwebtoken";
-import ENV from '../config.js'
+
 export async function Auth(req,res,next){
     try {
         const token = req.headers.authorization.split(" ")[1];
-        const decodetoken = await jwt.verify(token, ENV.SECRET_KEY);
+        const decodetoken = await jwt.verify(token, process.env.SECRET_KEY);
         req.user = decodetoken;
         next();
       
